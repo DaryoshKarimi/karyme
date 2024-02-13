@@ -7,136 +7,18 @@
         <link rel="preload" href="fonts/Heliuk Icon.otf" as="font" type="font/otf">
         <link rel="preload" href="fonts/PTMono-Regular.ttf" as="font" type="font/ttf">
         <link rel="preload" href="fonts/Garnett-Regular.ttf" as="font" type="font/ttf">
-
-        <style>
-            body { 
-                margin: 0; 
-                background: #000;
-            }
-
-            .leftnav {
-                font-family: Heliuk Icon;
-                font-size: 49.61px;
-                text-align: left;
-                letter-spacing: 0.1px;
-                color: white;
-                padding: 20px 0 0 25px;
-                display: inline-block;
-                margin-top: auto;
-                mix-blend-mode: difference;
-            }
-
-            .leftnav:hover {
-                filter: blur(4px);
-                transition: 1s filter linear;
-                webkit-transition: 1s -webkit-filter linear;
-                moz-transition: 1s -moz-filter linear;
-                ms-transition: 1s -ms-filter linear;
-                o-transition: 1s -o-filter linear;
-            }
-
-            .leftnav:hover+.money {
-                display: block;
-            }
-
-            .leftdown {
-                font-family: Linotype Elisa Bold;
-                font-size: 48px;
-                text-align: left;
-                word-spacing: -3px;
-                letter-spacing: -2px;
-                width: 100%;
-                position:fixed;
-                bottom: 45px;
-                text-transform: uppercase;
-                padding: 0 0 15px 25px;
-                box-sizing: border-box;
-                margin-top: auto;
-                color: #FFD600;
-                -webkit-text-stroke-width: 1px;
-                -webkit-text-stroke-color: #FF7EB4;
-            }
-
-            .leftbody {
-                font-family: PTMono-Regular;
-                font-size: 18px;
-                text-align: left;
-                word-spacing: -4.5px;
-                width: 97%;
-                position: fixed;
-                bottom: 20px;
-                padding: 0 0 0 25px;
-                box-sizing: border-box;
-                text-indent: 41px;
-                margin-top: auto;
-                color: #FFD600;
-                -webkit-text-stroke-width: 0.7px;
-                -webkit-text-stroke-color: #FF7EB4;
-            }
-
-            .money {
-                position:relative;
-                display: none;
-                transform:translate(0);
-                height:35px;
-                width:35px;
-            }
-
-            .righttop {
-                display: inline-block;
-                float: right;
-                padding: 27px 25px 0 0;
-            }
-
-            .button {
-                color: white;
-                cursor: pointer;
-                background: none;
-                text-align: center;
-                font-size: 28px;
-                padding: 3px 13px 3px 13px;
-                font-family: arial;
-                border-radius: 25px;
-                border: 1px solid white;
-            }
-
-            .button:hover {
-                color: #FFD600;
-                -webkit-text-stroke-width: 1px;
-                -webkit-text-stroke-color: #FF7EB4;
-                border: 1px solid #FF7EB4;
-                transition: 0.3s;
-            }
-
-
-            @font-face {
-                font-family: "Linotype Elisa Bold";
-                src: url("https://db.onlinewebfonts.com/t/59ce26dfd278f8daa9239ab283ced29d.eot");
-                src: url("https://db.onlinewebfonts.com/t/59ce26dfd278f8daa9239ab283ced29d.eot?#iefix")format("embedded-opentype"),
-                url("https://db.onlinewebfonts.com/t/59ce26dfd278f8daa9239ab283ced29d.woff2")format("woff2"),
-                url("https://db.onlinewebfonts.com/t/59ce26dfd278f8daa9239ab283ced29d.woff")format("woff"),
-                url("https://db.onlinewebfonts.com/t/59ce26dfd278f8daa9239ab283ced29d.ttf")format("truetype"),
-                url("https://db.onlinewebfonts.com/t/59ce26dfd278f8daa9239ab283ced29d.svg#Linotype Elisa Bold")format("svg");
-            }
-        </style>
+        <link rel='stylesheet' type='text/css' href='style.css'/>
     </head>
 
     <body>
         <div class='leftnav'>Karyme (ka-ree-mee)</div>
         <div class='righttop'><button class="button">LISTEN</button></div>
-        <img id="money" class='money' src='images/moneywing.png'>
         <div class='leftdown'>Karyme (ka-ree-mee)</div>
         <div class='leftbody'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris egestas velit ut ligula scelerisque auctor. Fusce mauris nunc, viverra ac velit id, ullamcorper consectetur quam. Cras ac massa ipsum. Sed bibendum laoreet sapien, a gravida justo porta eu. Proin commodo augue diam, eu pulvinar elit ullamcorper sed.</div>
 
-        <script>
-            document.addEventListener('mousemove', function(e) {
-                let body = document.querySelector('body');
-                let circle = document.getElementById('money');
-                let left = e.offsetX;
-                let top = e.offsetY;
-                circle.style.left = left + 'px';
-                circle.style.top = top + 'px';
-            });
-        </script>
+        <script src='/js/lib.js'></script>
+        <script src='/js/engine.js'></script>
+        <script src='/js/render.js'></script>
+        <script src='/js/main.js'></script>
     </body>
 </html>

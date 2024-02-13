@@ -28,8 +28,8 @@ let daryosh_rotation_theta = 0
 
 const shadow_lights = []
 shadow_lights[0] = {}
-shadow_lights[0].position = new Float32Array([-10, 15.0, -20])
-shadow_lights[0].rotation = create_lookat_rotation_matrix(new Float32Array(16), shadow_lights[0].position, [-20,-5,30])
+shadow_lights[0].position = new Float32Array([-0.0, 10.0, 3.0])
+shadow_lights[0].rotation = create_lookat_rotation_matrix(new Float32Array(16), shadow_lights[0].position, [-0,-0,0])
 /*
 shadow_lights[1] = {}
 shadow_lights[1].position = new Float32Array([-42, 9, 5])
@@ -196,28 +196,6 @@ function update_daryosh () {
 
 
 function update_camera () {
-  if (right_pressed) {
-    camera_ry_target = camera_ry_target - dt*0.0015
-  }
-  if (left_pressed) {
-    camera_ry_target = camera_ry_target + dt*0.0015
-  }
-  if (up_pressed) {
-    const n = create_translation_matrix(new Float32Array(16), -dt*0.015 * Math.sin(camera_ry), 0, -dt*0.015 * Math.cos(camera_ry))
-    const v = matrix_operate_4(new Float32Array(4), n, [camera_tx_target, camera_ty_target, camera_tz_target, 1])
-    camera_tx_target = v[0]
-    camera_ty_target = v[1]
-    camera_tz_target = v[2]
-  }
-  if (down_pressed) {
-    const n = create_translation_matrix(new Float32Array(16), dt*0.015 * Math.sin(camera_ry), 0, dt*0.015 * Math.cos(camera_ry))
-    const v = matrix_operate_4(new Float32Array(4), n, [camera_tx_target, camera_ty_target, camera_tz_target, 1])
-    camera_tx_target = v[0]
-    camera_ty_target = v[1]
-    camera_tz_target = v[2]
-  }
-
-
   if (camera_animation_tween < 1) {
     camera_animation_tween += dt*0.0045
   }
@@ -298,10 +276,10 @@ function main () {
 
   camera_update_perspective()
 
-  camera_ry_target = Math.PI/2
-  camera_tx_target = 15.267
-  camera_ty_target = 0.043
-  camera_tz_target = -0.039
+  camera_ry_target = 0;
+  camera_tx_target = 0;
+  camera_ty_target = 0;
+  camera_tz_target = 15;
 
   gl.getExtension('WEBGL_depth_texture')
 

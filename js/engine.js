@@ -202,33 +202,6 @@ function init_canvas () {
 
 
 /****************************
- * Key events
- ***************************/
-
-document.addEventListener('keydown', handle_keydown, false)
-document.addEventListener('keyup', handle_keyup, false)
-
-var right_pressed = false
-var left_pressed = false
-var up_pressed = false
-var down_pressed = false
-
-function handle_keydown (event) {
-  if (event.keyCode == 37) { left_pressed = true }
-  else if (event.keyCode == 38) { up_pressed = true }
-  else if (event.keyCode == 39) { right_pressed = true }
-  else if (event.keyCode == 40) { down_pressed = true }
-}
-
-function handle_keyup (event) {
-  if (event.keyCode == 37) { left_pressed = false; }
-  else if (event.keyCode == 38) { up_pressed = false; }
-  else if (event.keyCode == 39) { right_pressed = false; }
-  else if (event.keyCode == 40) { down_pressed = false; }
-}
-
-
-/****************************
  * Main Loop
  ***************************/
 

@@ -190,11 +190,11 @@ function init_canvas () {
 
   window.addEventListener('resize', function (e) { has_resized = true })
 
-  canvas.addEventListener('mousedown', handle_mousedown);
-  canvas.addEventListener('mousemove', handle_mousemove);
+  window.addEventListener('mousedown', handle_mousedown);
+  window.addEventListener('mousemove', handle_mousemove);
   window.addEventListener('mouseup', handle_mouseup);
   window.addEventListener('mouseleave', handle_mouseup);
-  canvas.addEventListener('touchstart', handle_mousedown);
+  window.addEventListener('touchstart', handle_mousedown);
   window.addEventListener('touchmove', handle_mousemove, {passive: false});
   window.addEventListener('touchend', handle_mouseup);
   window.addEventListener('touchcancel', handle_mouseup);
